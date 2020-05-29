@@ -1,6 +1,3 @@
-->First run app.py file in command prompt using command : python model.py
-->and then open https://localhost:5000/ in browser
-
-NOTE: You must install python3 and flask library to run this program.
-
-
+Bangalore house prices data consists of prices of houses across different places in Bangalore. Dataset also consists of information about area, bhk, number of bathroom and several other attributes.
+You can download dataset from kaggle.com.
+The goal of this machine learning project is to predict the selling price of a new home by applying basic machine learning concepts on the housing prices data
