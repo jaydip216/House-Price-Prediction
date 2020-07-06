@@ -4,29 +4,28 @@
 	<title>Prediction</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static' ,filename='css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static' ,filename='css/main.css')}}">
-<!--===============================================================================================-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	
 </head>
 <body>
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action='/predict' method="post">
-				<span class="contact100-form-title">
-					House Price Prediction
-				</span>
-				
-				<span class="wrap-input100 validate-input">
-				{{pred}}
-				<br>
-				</span>
-				
-				<div>
-				<br>
-					<span class="label-input100">Location</span>
-					<div>
-						<select class="selection-2" name="Location">
+	<div class="container-sm">
+			<h1>House Price Prediction</h1>
+			<form class="contact100-form validate-form" action='/predict' method="post">			
+				<hr>
+				<div class="form-group">
+					<label for="Location">Location:</label>
+					<select class="form-control" name="Location">
 							<option>1st Block Jayanagar</option>
 							<option>1st Phase JP Nagar</option>
 							<option>2nd Stage Nagarbhavi</option>
@@ -248,49 +247,30 @@
 							<option>Yeshwanthpur</option>
 						</select>
 					</div>
-					<span class="focus-input100"></span>
-				</div>
+				
 				<div data-validate = "Area is required">
-					<span class="label-input100">Area</span>
-					<input class="input100" type="text" name="sqft" placeholder="Enter Area(in sqft)">
-					
+					<div class="form-group">
+					<label for="Area">Area:</label>
+					<input type="text" class="form-control" name="sqft" placeholder="Enter Area(in sqft)">
+					</div>
 				</div>
 				
 				<div  data-validate = "BHK is required">
-					<span class="label-input100">BHK</span>
-					<input class="input100" type="text" name="bhk" placeholder="Enter BHK">
-					<span class="focus-input100"></span>
+					<div class="form-group">
+					<label for="BHK">BHK:</label>
+					<input class="form-control" type="text" name="bhk" placeholder="Enter BHK">
 				</div>
-
 
 				<div  data-validate = "bathroom is required">
-					<span class="label-input100">Bathrooms</span>
-					<input class="input100" type="text" name="bath" placeholder="Enter No. of bathrooms">
-					<span class="focus-input100"></span>
+					<div class="form-group">
+					<label for="Bathrooms">Bathrooms:</label>
+					<input class="form-control" type="text" name="bath" placeholder="Enter No. of bathrooms">
 				</div>
 
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span>
-								Predict
-								
-							</span>
-						</button>
-					</div>
-				</div>
-				<br>
-				
+				<button type="submit" class="btn btn-outline-primary">Predict</button>
+				<hr>
 			</form>
-		</div>
-	</div>
-
-
-
-	<div id="dropDownSelect1"></div>
-
-
-
+			{{pred}}
+			</div>
 </body>
 </html>
